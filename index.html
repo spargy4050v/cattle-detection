@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cattle Breed Classifier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+  <div class="app-container">
+    <h1 class="app-title">Cattle Breed Classifier</h1>
+
+    <!-- Tabs for Upload or Camera -->
+    <div class="flex justify-center space-x-4 mb-6">
+      <button id="uploadTab" class="tab-btn active">Upload</button>
+      <button id="cameraTab" class="tab-btn">Camera</button>
+    </div>
+
+    <!-- Upload Section -->
+    <div id="uploadSection">
+      <label class="block text-gray-700 font-medium mb-2">
+        Upload a photo of the cattle:
+      </label>
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/png, image/jpeg"
+        class="file-input"
+      />
+    </div>
+
+    <!-- Camera Section -->
+    <div id="cameraSection" class="hidden">
+      <video id="video" autoplay playsinline class="video-preview"></video>
+      <button id="captureBtn" class="capture-btn mt-3">Capture Photo</button>
+      <canvas id="canvas" class="hidden"></canvas>
+    </div>
+
+    <!-- Preview -->
+    <div id="previewContainer" class="hidden mt-4">
+      <p class="text-gray-700 font-medium mb-2">Preview:</p>
+      <img id="previewImage" class="preview-image" alt="Cattle image preview" />
+    </div>
+
+    <!-- Predict Button -->
+    <button id="predictBtn" class="predict-btn mt-4">Predict Breed</button>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="hidden mt-4 text-center text-gray-600">
+      <span class="animate-pulse">Processing image, please wait...</span>
+    </div>
+
+    <!-- Result Display -->
+    <div id="result" class="hidden mt-4 p-4 rounded-lg border bg-gray-50">
+      <p class="text-gray-800"><strong>Prediction:</strong> <span id="prediction"></span></p>
+      <p class="text-gray-800"><strong>Confidence:</strong> <span id="confidence"></span></p>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error" class="hidden mt-4 p-4 rounded-lg border border-red-400 bg-red-50 text-red-700"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

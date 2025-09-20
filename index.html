@@ -21,7 +21,7 @@
 
     <!-- Upload Section -->
     <div id="uploadSection">
-      <label class="block text-gray-700 font-medium mb-2">
+      <label for="imageInput" class="block text-gray-700 font-medium mb-2">
         Upload a photo of the cattle:
       </label>
       <input
@@ -34,9 +34,21 @@
 
     <!-- Camera Section -->
     <div id="cameraSection" class="hidden">
-      <video id="video" autoplay playsinline class="video-preview"></video>
-      <button id="captureBtn" class="capture-btn mt-3">Capture Photo</button>
-      <canvas id="canvas" class="hidden"></canvas>
+      <video 
+        id="video" 
+        autoplay 
+        muted
+        class="video-preview"
+        aria-label="Camera preview for cattle photo capture"
+      ></video>
+      <button 
+        id="captureBtn" 
+        class="capture-btn mt-3"
+        type="button"
+      >
+        Capture Photo
+      </button>
+      <canvas id="canvas" class="hidden" aria-hidden="true"></canvas>
     </div>
 
     <!-- Preview -->
